@@ -3,3 +3,5 @@
 The getOperate tool is developed by [dData](https://th.linkedin.com/company/ddataco) the company where I interned from March to April in 2024. I participated in its development, and the repository will showcase my contributions. However, please note that not all files are displayed due to copyright restrictions.😛
 
 Certainly, if you cannot find the "getOperate" website, please click on this link [getOperate](https://getoperate.com/)
+
+**Participated Contributions List**
