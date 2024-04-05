@@ -1,0 +1,44 @@
+.markdownformat {
+
+}
+
+.markdownformat > h1 {
+    @apply mb-2 mt-6 text-4xl font-semibold
+}
+
+.markdownformat > h2 {
+    @apply mb-2 mt-6 text-2xl font-semibold
+}
+
+.markdownformat > h3 {
+    @apply mb-2 mt-6 text-xl font-semibold
+}
+
+.markdownformat > ol {
+    @apply mb-3 mt-1 list-decimal pl-8
+}
+
+.markdownformat > li {
+    @apply mb-0.5
+}
+
+.markdownformat > ul {
+    @apply mb-3 mt-1 list-disc pl-8
+}
+
+.markdownformat > p {
+    @apply mb-0.5
+}
+
+/* link */
+.markdownformat > p > a {
+    @apply underline
+}
+
+.markdownformat > pre {
+    @apply mx-auto my-2 block w-[70%] rounded bg-black p-6 text-white dark:bg-gray-400 dark:text-black break-words whitespace-pre-wrap
+}
+
+.markdownformat > code {
+    @apply break-words whitespace-pre-wrap break-inside-avoid
+}
