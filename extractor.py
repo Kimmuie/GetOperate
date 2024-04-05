@@ -1,7 +1,7 @@
 import json
 
 # Load JSON data from the file with explicit encoding specification
-with open('make_templates_data.json', 'r', encoding='utf-8') as file:
+with open('templates_data.json', 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # Extract the "name" data
