@@ -17,11 +17,11 @@ import {
   fetchCategories,
   fetchPaginationAppsByCategory,
 } from "@/lib/strapi/actions";
-import AppSearch from "@/components/appsearch";
+import SearchPP from "@/components/searchpp";
 import { redirect } from "next/navigation";
-import AppsLimit from "@/components/appslimit";
+import PageLimit from "@/components/pagelimit";
 import AppPagenation from "@/components/apppagination";
-import AppSort from "@/components/appsort";
+import SortSelect from "@/components/sortselect";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   return {
@@ -38,7 +38,7 @@ const Apps = async ({
 }) => {
   const filter = searchParams.filter ?? "ALL";
   const page = searchParams.page ?? 1;
-  const appsPerPage = searchParams.appsPerPage ?? 9;
+  const appsPerPage = searchParams.perPage ?? 9;
   const search = searchParams.search ?? "";
   const sort = searchParams.sort ?? "title";
 
@@ -230,9 +230,9 @@ const Apps = async ({
                   </p>
                 </div>
                 <div className="flex gap-5 items-end">
-                  <AppsLimit pagination={apps.meta.pagination} />
-                  <AppSort />
-                  <AppSearch />
+                  <PageLimit pagination={apps.meta.pagination} />
+                  <SortSelect />
+                  <SearchPP />
                 </div>
               </div>
             </div>
@@ -243,6 +243,13 @@ const Apps = async ({
                   key={app.id || index}
                   link={`/apps/${app.attributes?.slug}`}
                   title={app.attributes?.title}
+                  category={
+                    app.attributes.categories as any as ResponseCategories
+                  } // not working man patto
+                  categorylink={{
+                    pathname: "/apps",
+                    // query: category
+                  }}
                   icon={
                     <>
                       <Image
