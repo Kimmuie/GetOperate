@@ -9,3 +9,6 @@ Certainly, if you cannot find the "getOperate" website, please click on this lin
 - Integrated Apps Data
 - Pagination
 - Catogories Filter
+- Categories Block on GoCard
+- Template Slug Organize
+- Extract Template Data to CMS
