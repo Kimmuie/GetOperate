@@ -10,18 +10,23 @@ import {
   PageHeaderHeading,
   PageHeaderDescription,
 } from "@/components/page-header";
-
 import { GoCard } from "@/components/go-card";
-import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 import {
   fetchCategories,
   fetchPaginationAppsByCategory,
 } from "@/lib/strapi/actions";
-import SearchPP from "@/components/searchpp";
-import { redirect } from "next/navigation";
+import Link from "next/link";
 import PageLimit from "@/components/pagelimit";
-import AppPagenation from "@/components/apppagination";
+import SearchPP from "@/components/searchpp";
 import SortSelect from "@/components/sortselect";
+import AppPagenation from "@/components/apppagination";
+import { Category, ResponseCategories } from "@/lib/strapi/category.types";
+import { redirect } from "next/navigation";
+
+interface GoCardAttr {
+  category?: ResponseCategories;
+}
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   return {
@@ -36,11 +41,12 @@ const Apps = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const filter = searchParams.filter ?? "ALL";
+  const category = searchParams.category ?? "ALL";
   const page = searchParams.page ?? 1;
   const appsPerPage = searchParams.perPage ?? 9;
   const search = searchParams.search ?? "";
   const sort = searchParams.sort ?? "title";
+
 
   const categories = await fetchCategories();
   if (!categories) return null;
@@ -49,7 +55,7 @@ const Apps = async ({
     return redirect("/apps");
   const apps = await fetchPaginationAppsByCategory(
     Number(page),
-    filter,
+    category,
     Number(appsPerPage),
     String(search),
     String(sort)
@@ -88,29 +94,7 @@ const Apps = async ({
         </PageHeader>
         <div className="flex flex-col md:flex-row gap-3">
           <div className="md:w-1/3 lg:w-1/5 pr-5">
-            {/* <h1 className="text-base font-semibold tracking-tighter leading-[1.1] mb-3">
-              Sort Apps By
-            </h1>
-            <div className="flex flex-col gap-1">
-              <a
-                className="text-sm font-medium tracking-tighter leading-[1.1] pl-6 py-2 rounded transition-all hover:bg-go-blue-hover dark:hover:text-black bg-go-blue-10 text-black"
-                href="#"
-              >
-                Top 100 Apps
-              </a>
-              <a
-                className="text-sm font-medium tracking-tighter leading-[1.1] pl-6 py-2 rounded transition-all hover:bg-go-blue-hover dark:hover:text-black"
-                href="#"
-              >
-                Beta
-              </a>
-              <a
-                className="text-sm font-medium tracking-tighter leading-[1.1] pl-6 py-2 rounded transition-all hover:bg-go-blue-hover dark:hover:text-black"
-                href="#"
-              >
-                Recently Launched
-              </a>
-            </div> */}
+
             <h1 className="any-device text-base font-bold tracking-tighter leading-[1.1] my-3">
               <Link href="/apps">App Categories</Link>
             </h1>
@@ -126,7 +110,7 @@ const Apps = async ({
                     <Link
                       href={{
                         pathname: "/apps",
-                        query: { filter: role },
+                        query: { category: role },
                       }}
                       scroll={false}
                     >
@@ -144,7 +128,7 @@ const Apps = async ({
                           <Link
                             href={{
                               pathname: "/apps",
-                              query: { filter: item?.attributes?.slug },
+                              query: { category: item?.attributes?.slug },
                             }}
                             scroll={false}
                           >
@@ -182,7 +166,7 @@ const Apps = async ({
                           <Link
                             href={{
                               pathname: "/apps",
-                              query: { filter: role },
+                              query: { category: role },
                             }}
                             scroll={false}
                           >
@@ -200,7 +184,7 @@ const Apps = async ({
                                 <Link
                                   href={{
                                     pathname: "/apps",
-                                    query: { filter: item?.attributes?.slug },
+                                    query: { category: item?.attributes?.slug },
                                   }}
                                   scroll={false}
                                 >
@@ -220,7 +204,7 @@ const Apps = async ({
           <div className="w-full">
             <div className="justify-between flex items-baseline flex-col  mb-10">
               <h1 className="text-4xl font-bold tracking-tighter leading-[1.1] mb-6">
-                {filter === "ALL" ? "Integrated Apps" : slugToTitle(filter)}
+                {category === "ALL" ? "Integrated Apps" : slugToTitle(category)}
               </h1>
               <div className="flex flex-col-reverse sm:flex-row gap-3 items-left sm:items-center  justify-between w-full">
                 <div>
@@ -240,16 +224,13 @@ const Apps = async ({
             <div className="grid lg:grid-cols-3 gap-4">
               {apps.data.map((app, index) => (
                 <GoCard
-                  key={app.id || index}
                   link={`/apps/${app.attributes?.slug}`}
                   title={app.attributes?.title}
                   category={
-                    app.attributes.categories as any as ResponseCategories
-                  } // not working man patto
-                  categorylink={{
-                    pathname: "/apps",
-                    // query: category
-                  }}
+                    app.attributes?.categories as any as ResponseCategories
+                  }
+                  categorylink={"/apps?category="}
+                  key={index}
                   icon={
                     <>
                       <Image
@@ -262,7 +243,7 @@ const Apps = async ({
                     </>
                   }
                 >
-                  {app.attributes?.description || "No description available."}
+                  {app.attributes?.description.replace(/[#`_*~>]/g, "").replace(/<u>/g, "").replace(/<\/u>/g, "")}
                 </GoCard>
               ))}
               {/* <GoCard
