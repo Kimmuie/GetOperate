@@ -3,12 +3,17 @@
 The getOperate tool is developed by [dData](https://th.linkedin.com/company/ddataco) the company where **I interned from March to April in 2024**. I participated in its development, and the repository will showcase my contributions. However, please note that not all files are displayed due to copyright restrictions.😛
 
 Certainly, if you cannot find the "getOperate" website, please click on this link [getOperate](https://getoperate.com/)  
+
+This is my presentation slide to introduce what I have done.[Here](https://1drv.ms/p/s!Apx47cy95LLghmD5vt5yb800m15z?e=m2bp70)
 .  
 .  
 **Participated Contributions List**
 - Integrated Apps Data
 - Pagination
-- Catogories Filter
-- Categories Block on GoCard
-- Template Slug Organize
+- Catogories&Templates&Blogs Sort
+- Catogories&Templates&Blogs Search
+- Categories&Templates&Blogs GoCard
+- Categories&Templates&Blogs Internal site
+- Catogories&Templates Filter
+- Markdown
 - Extract Template Data to CMS
