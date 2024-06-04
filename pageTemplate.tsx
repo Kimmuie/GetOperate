@@ -39,7 +39,7 @@ const Templates = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const filter = searchParams.filter ?? "ALL";
+  const category = searchParams.category ?? "ALL";
   const page = searchParams.page ?? 1;
   const appsPerPage = searchParams.perPage ?? 9;
   const search = searchParams.search ?? "";
@@ -47,7 +47,7 @@ const Templates = async ({
   const categories = await fetchCategories();
   const templates = await fetchPaginationTemplatesByCategory(
     Number(page),
-    filter,
+    category,
     Number(appsPerPage),
     String(search),
     String(sort)
@@ -94,7 +94,7 @@ const Templates = async ({
                     <Link
                       href={{
                         pathname: "/templates",
-                        query: { filter: role },
+                        query: { category: role },
                       }}
                     >
                       {role}
@@ -110,7 +110,7 @@ const Templates = async ({
                           <Link
                             href={{
                               pathname: "/templates",
-                              query: { filter: item?.attributes?.slug },
+                              query: { category: item?.attributes?.slug },
                             }}
                           >
                             {item?.attributes?.title}
@@ -147,7 +147,7 @@ const Templates = async ({
                           <Link
                             href={{
                               pathname: "/templates",
-                              query: { filter: role },
+                              query: { category: role },
                             }}
                           >
                             {role}
@@ -163,7 +163,7 @@ const Templates = async ({
                                 <Link
                                   href={{
                                     pathname: "/templates",
-                                    query: { filter: item?.attributes?.slug },
+                                    query: { category: item?.attributes?.slug },
                                   }}
                                 >
                                   {item?.attributes?.title}
@@ -182,7 +182,7 @@ const Templates = async ({
           <div className="w-full">
             <div className="justify-between flex items-baseline flex-col  mb-10">
               <h1 className="text-4xl font-bold tracking-tighter leading-[1.1] mb-6">
-                {filter === "ALL" ? "Template Families" : slugToTitle(filter)}
+                {category === "ALL" ? "Template Families" : slugToTitle(category)}
               </h1>
               <div className="flex flex-col-reverse sm:flex-row gap-3 items-left sm:items-center  justify-between w-full">
                 <div>
@@ -207,10 +207,7 @@ const Templates = async ({
                   category={
                     template.attributes.categories as any as ResponseCategories
                   }
-                  categorylink={{
-                    pathname: "/templates",
-                    query: { filter:template.attributes.categories } as any as ResponseCategories,
-                  }} // pat
+                    categorylink={"/templates?category="}
                   key={index}
                   icon={template.attributes.apps?.data?.map((app, index) => (
                     <Image
@@ -224,7 +221,7 @@ const Templates = async ({
                   ))}
                 >
                   <></>
-                  {template.attributes.description.replace(/#/g, "")}
+                  {template.attributes.description.replace(/[#`_*~>]/g, "").replace(/<u>/g, "").replace(/<\/u>/g, "")}
                 </GoCard>
               ))}
             </div>
