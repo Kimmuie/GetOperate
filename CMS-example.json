@@ -1,0 +1,17 @@
+{
+    "templates": [
+        {
+            "title": "Add new Magento customers to SuiteCRM 7 as new contacts",
+            "slug": "add-new-magento-customers-to-suitecrm-7-as-new-contacts",
+            "description": "Every time a new customer is created in Magento, Make will automatically add that customer to SuiteCRM 7 as a new contact.",
+            "apps": [
+                "Magento 1 (deprecated)",
+                "SuiteCRM 7"
+            ],
+            "categories": [
+                "crm",
+                "e-commerce"
+            ]
+        }
+  ]
+}
