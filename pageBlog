@@ -1,1 +1,268 @@
+import Image from "next/image";
+import { GoCard } from "@/components/go-card";
+import SortSelect from "@/components/sortselect";
+import SearchPP from "@/components/searchpp";
+import PageLimit from "@/components/pagelimit";
+import AppPagenation from "@/components/apppagination";
+import { Category, ResponseTags } from "@/lib/strapi/category.types";
+import {
+	fetchCategories,
+	fetchPaginationBlog,
+	fetchPaginationBlogsByCategory,
+	fetchPaginationTemplatesByCategory,
+} from "@/lib/strapi/actions";
+import {
+	PageHeader,
+	PageHeaderHeading,
+	PageHeaderDescription,
+} from "@/components/page-header";
+
+interface GoCardAttr {
+	category?: ResponseTags;
+}
+
+export async function generateMetadata(props: { params: { locale: string } }) {
+	return {
+		title: "Blogs",
+		description: "",
+	};
+}
+
+const Blogs = async ({
+	searchParams,
+}: {
+	searchParams: { [key: string]: string | string[] | undefined };
+}) => {
+	// const filter = searchParams.filter ?? "ALL";
+	const page = searchParams.page ?? 1;
+	const appsPerPage = searchParams.perPage ?? 9;
+	const search = searchParams.search ?? "";
+	const sort = searchParams.sort ?? "title";
+	//  const categories = await fetchCategories();
+	const blogs = await fetchPaginationBlog(
+		Number(page),
+		Number(appsPerPage),
+		String(search),
+		String(sort)
+	);
+
+	// console.log(blogs);
+
+	return (
+		<>
+			<div className="container relative">
+				<PageHeader className="w-full items-start">
+					<PageHeaderHeading className="max-w-xl mx-auto">
+						Product News
+					</PageHeaderHeading>
+					<PageHeaderDescription className="mt-3 mx-auto">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum amet
+						dicta laboriosam porro!
+					</PageHeaderDescription>
+				</PageHeader>
+				<div className="flex flex-col-reverse sm:flex-row gap-3 items-left sm:items-center  justify-between w-full">
+					<div className="flex-grow flex gap-5 items-end ">
+						<SearchPP />
+						<SortSelect />
+					</div>
+				</div>
+				<div className="grid md:grid-cols-4 gap-4 mb-20 mt-5">
+					{/* <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard>
+          <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard>
+          <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard>
+          <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard>
+          <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard>
+          <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard>
+          <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard>
+          <GoCard
+            link="/blogs/blog-page"
+            title="Round-robin tasks outreach"
+            icon={
+              <Image
+                src="/icon-salesforce.png"
+                alt="icon"
+                width={200}
+                height={100}
+                className="rounded-lg mx-auto"
+              />
+            }
+            
+          >
+            Efficiently reach out to your closed-won deals by using round-robin
+            tasks. Efficiently reach out to your closed-won deals by using
+            round-robin tasks. Efficiently reach out to your closed-won deals by
+            using round-robin tasks.
+          </GoCard> */}
+					{/* {blogs.data.map((blog, index) => (
+						<GoCard
+							link={`/blogs/${blog.attributes?.slug}`}
+							title={blog.attributes?.title}
+							category={blog.attributes.categories as any as ResponseCategories}
+							categorylink={"/templates?filter="}
+							// pat
+							key={index}
+							icon={blog.attributes.apps?.data?.map((app, index) => (
+								<Image
+									src={`https://go-app-images.s3.ap-southeast-1.amazonaws.com/${app?.attributes?.slug}.png`}
+									key={index}
+									alt="icon"
+									width={32}
+									height={32}
+									className="rounded-lg"
+								/>
+							))}
+						>
+							<></>
+							{blog.attributes.content.replace(/#/g, "")}
+						</GoCard>
+					))} */}
+					{blogs.data.map((blog) => (
+						<GoCard
+							key={blog.id}
+							link={`/blogs/${blog.attributes.slug}`}
+							title={blog.attributes.title}
+							category={blog.attributes.tags as any as ResponseTags}
+							categorylink={"/blogs?category="}
+							icon={
+								<Image
+									src={blog.attributes.thumbnail}
+									alt="icon"
+									width={200}
+									height={100}
+									className="rounded-lg mx-auto w-full h-52 object-cover"
+								/>
+							}
+						>
+							{blog.attributes.content
+								.replace(/[#`_*~>]/g, "")
+								.replace(/<u>/g, "")
+								.replace(/<\/u>/g, "")}
+						</GoCard>
+					))}
+				</div>
+			</div>
+		</>
+	);
+};
+
+export default Blogs;
 
