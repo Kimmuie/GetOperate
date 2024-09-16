@@ -11,14 +11,15 @@ The getOperate tool is developed by [dData](https://th.linkedin.com/company/ddat
 <br>
 ### Participated Contributions List
 - Integrated Apps Data
+- Extract Template Data from CMS
 - Pagination
+- Navigation
 - Catogories&Templates&Blogs Sort
 - Catogories&Templates&Blogs Search
 - Categories&Templates&Blogs GoCard
 - Categories&Templates&Blogs Internal site
 - Catogories&Templates Filter
 - Markdown
-- Extract Template Data to CMS
 
 ### Used Language/Tools
 <div>
