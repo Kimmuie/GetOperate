@@ -30,11 +30,11 @@ The getOperate tool is developed by [dData](https://th.linkedin.com/company/ddat
 </div>
 <br>  
 
-Certainly, if you cannot find the "getOperate" website, please click on this link [getOperate](https://getoperate.com/)  
+You can take a look at [getOperate](https://getoperate.com/) workflow. Currently developer of this workflow is [Prayong Nooyen](https://www.linkedin.com/in/prayong/), he is also my mentor of internship.
 
 ###  Participated Contributions / Website Interface
 <div>
-  <img src="./illustration/UI1.png"  title="CMS" height="230"width="460"/>
+  <img src="./illustration/UI1.png"  title="CMS" height="230"width="408"/>
   <img src="./illustration/UI2.png"  title="UI" height="230"/>
   <img src="./illustration/UI3.png"  title="UI" height="230"/>
   <img src="./illustration/UI4.png"  title="UI" height="230"/>
