@@ -33,7 +33,7 @@ The getOperate tool is developed by [dData](https://th.linkedin.com/company/ddat
 </div>
 <br>  
 
-You can take a look at [getOperate](https://getoperate.com/) workflow. Currently developer of this workflow is [Mr. Prayong Nooyen](https://www.linkedin.com/in/prayong/), he is also my mentor of internship.
+You can take a look at [getOperate](https://getoperate.com/) workflow. Currently developer of this workflow is [Mr. Prayong Nooyen](https://www.linkedin.com/in/prayong/), he is also my mentor of this internship.
 
 ###  Participated Contributions / Website Interface
 <div>
