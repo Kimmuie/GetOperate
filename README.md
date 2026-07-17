@@ -1,45 +1,121 @@
-# getOperate
+# 💼 getOperate (Internship Contributions)
 
-### What is getOperate?
-**getOperate** is a comprehensive platform designed to streamline internal operations by offering a range of tools and features. It provides over 6,000 templates for users to explore and offers generative workflows, allowing users to create custom workflows using a visual builder with drag-and-drop functionality. The platform emphasizes automation, enabling users to automate tasks and processes, from simple actions to building entire automated systems. Integration with Salesforce allows for triggers and actions, such as responding when a new record is created. Additionally, there's integration with application for sending summaries and action buttons for approval. Users can customize workflows according to their specific business needs.
-The getOperate tool is developed by [dData](https://th.linkedin.com/company/ddataco) the company where **I interned from 18 March to 30 April in 2024**. I participated in its development, and the repository will showcase my contributions. However, please note that not all files are displayed due to restrictions.
-<br>  
-**getOperate** เป็นแพลตฟอร์มที่ครอบคลุมซึ่งออกแบบมาเพื่อปรับปรุงกระบวนการภายในโดยนำเสนอเครื่องมือและคุณลักษณะต่างๆ โดยมีเทมเพลตมากกว่า 6,000 แบบให้ผู้ใช้งาน และยังมีเวิร์กโฟลว์ที่ช่วยให้ผู้ใช้สร้างเวิร์กโฟลว์แบบกำหนดเองได้โดยใช้ตัวสร้างภาพพร้อมฟังก์ชันลากและวาง แพลตฟอร์มนี้เน้นที่การทำงานอัตโนมัติ ช่วยให้ผู้ใช้ทำงานและกระบวนการต่างๆ โดยอัตโนมัติ ตั้งแต่การดำเนินการง่ายๆไปจนถึงการสร้างระบบอัตโนมัติทั้งหมด การบูรณาการกับ Salesforce ช่วยให้สามารถทริกเกอร์และการดำเนินการต่างๆ เช่น การตอบสนองเมื่อมีการสร้างระเบียนใหม่ นอกจากนี้ยังมีการบูรณาการกับแอปพลิเคชันสำหรับการส่งสรุปและปุ่มการดำเนินการเพื่อขออนุมัติ ผู้ใช้สามารถปรับแต่งเวิร์กโฟลว์ตามความต้องการทางธุรกิจเฉพาะของตนได้
-เครื่องมือ getOperate ได้รับการพัฒนาโดยบริษัท [dData](https://th.linkedin.com/company/ddataco) ซึ่งเป็นบริษัทที่ผม นายปรานต์ชยุต เนตรสว่าง **ได้ฝึกงานตั้งแต่วันที่ 18 มีนาคมถึง 30 เมษายน 2024** โดยที่ผมมีส่วนร่วมในการพัฒนาต่างๆมากมาย ซึ่งสามารถดูสิ่งที่ผมทำได้ภายในไฟล์ที่ถูกจัดเก็บในนี้ แต่อย่างไรก็ตามโปรดทราบว่ามีเพียงบางไฟล์เท่านั้นที่ถูกแสดงภายในนี้เนื่องจากมีข้อจำกัดต่างๆ
-<br>
-<br>
-<br>
-### Participated Contributions List
-- Integrated Apps Data
-- Extract Template Data from CMS
-- Pagination
-- Navigation
-- Catogories&Templates&Blogs Sort
-- Catogories&Templates&Blogs Search
-- Categories&Templates&Blogs GoCard
-- Categories&Templates&Blogs Internal site
-- Catogories&Templates Filter
-- Markdown
+<p align="center">
+  <img src="./illustration/getOperateBanner.jpg" title="getOperate" width="100%">
+</p>
 
-### Used Language/Tools
-<div>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain.svg"  title="CSS"width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5"width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript"width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript"width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python"width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/nextjs/nextjs-original.svg" title="NEXT.js"width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/tailwindcss/tailwindcss-original.svg" title="Tailwindcss"width="40" height="40"/>&nbsp;
-</div>
-<br>  
+<p align="center">
+  <img src="https://img.shields.io/badge/Role-Intern%20Developer-22C55E" />
+  <img src="https://img.shields.io/badge/Company-dData-2563EB" />
+  <img src="https://img.shields.io/github/stars/Kimmuie/BrainStack?style=social" />
+</p>
 
-You can take a look at [getOperate](https://getoperate.com/) workflow. Currently developer of this workflow is [Mr. Prayong Nooyen](https://www.linkedin.com/in/prayong/), he is also my mentor of this internship.
+---
 
-###  Participated Contributions / Website Interface
-<div>
-  <img src="./illustration/UI1.png"  title="CMS" height="210"width="373"/>
-  <img src="./illustration/UI2.png"  title="UI" height="210"/>
-  <img src="./illustration/UI3.png"  title="UI" height="210"/>
-  <img src="./illustration/UI4.png"  title="UI" height="210"/>
-</div>
+## ✨ Overview
 
+**getOperate** is an enterprise workflow automation platform developed by **dData**, providing businesses with tools to build, customize, and automate internal processes.
+
+The platform offers **6,000+ workflow templates**, a visual drag-and-drop workflow builder, and integrations with external services such as Salesforce. Organizations can automate repetitive tasks, create approval flows, and build custom business processes without developing everything from scratch.
+
+This repository **does not contain the complete source code** of getOperate. Instead, it showcases the work I contributed during my internship at **dData** from **18 March – 30 April 2024**. Due to company confidentiality and intellectual property restrictions, only selected files and features that I worked on are included.
+
+## 🏢 Internship
+
+* **Company:** dData
+* **Position:** Software Developer Intern
+* **Duration:** 18 March – 30 April 2024
+* **Mentor:** Mr. Prayong Nooyen
+
+The internship provided hands-on experience in developing production-level enterprise software, collaborating within a professional development team, and working with CMS-driven applications and modern web technologies.
+
+## 👨‍💻 My Contributions
+
+During my internship, I participated in developing several parts of the platform, including:
+
+| Area                    | Contribution                                                         |
+| ----------------------- | -------------------------------------------------------------------- |
+| **CMS Integration**     | Retrieved and displayed application and template data from the CMS.  |
+| **Template System**     | Implemented template extraction, categorization, and rendering.      |
+| **Pagination**          | Developed pagination for large collections of templates and content. |
+| **Navigation**          | Improved website navigation and routing.                             |
+| **Search**              | Built search functionality for categories, templates, and blogs.     |
+| **Sorting & Filtering** | Implemented sorting and filtering for categories and templates.      |
+| **Internal Pages**      | Developed category, template, and blog detail pages.                 |
+| **GoCard Components**   | Created reusable card components for content navigation.             |
+| **Markdown Support**    | Added Markdown rendering for documentation and content pages.        |
+
+## 🌐 Official Website
+
+Learn more about getOperate:
+
+**https://getoperate.com/**
+
+The workflow automation system is currently developed by **Mr. Prayong Nooyen**, who also served as my mentor during the internship.
+
+## 🖥 Built With
+
+<table>
+<tr align="center">
+<td width="90">
+<img src="https://skillicons.dev/icons?i=nextjs" width="48"/>
+</td>
+
+
+<td width="90">
+<img src="https://skillicons.dev/icons?i=tailwind" width="48"/>
+</td>
+
+<td width="90">
+<img src="https://skillicons.dev/icons?i=typescript" width="48"/>
+</td>
+
+<td width="90">
+<img src="https://skillicons.dev/icons?i=python" width="48"/>
+</td>
+
+</tr>
+
+<tr align="center">
+<td>Next.js</td>
+<td>Tailwind</td>
+<td>TypeScript</td>
+<td>Python</td>
+</tr>
+</table>
+
+## 📸 Internship Contributions
+
+<table>
+<tr>
+<td align="center">
+<img src="./illustration/UI1.png" width="100%">
+<br><b>CMS Integration</b>
+</td>
+
+<td align="center">
+<img src="./illustration/UI2.png" width="100%">
+<br><b>Templates</b>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td align="center">
+<img src="./illustration/UI3.png" width="100%">
+<br><b>Search & Navigation</b>
+</td>
+
+<td align="center">
+<img src="./illustration/UI4.png" width="100%">
+<br><b>Content Pages</b>
+</td>
+</tr>
+</table>
+
+> **Note:** The screenshots and source code shown in this repository represent only the parts I contributed during my internship. The complete getOperate platform is proprietary software owned by **dData** and is not included in this repository.
+
+## 📄 License
+
+This repository is shared for portfolio and educational purposes only. Proprietary components and confidential company assets are intentionally excluded.
