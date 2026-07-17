@@ -22,10 +22,10 @@ This repository **does not contain the complete source code** of getOperate. Ins
 
 ## 🏢 Internship
 
-* **Company:** dData
+* **Company:** [dData](https://th.linkedin.com/company/ddataco)
 * **Position:** Software Developer Intern
 * **Duration:** 18 March – 30 April 2024
-* **Mentor:** Mr. Prayong Nooyen
+* **Mentor:** [Mr. Prayong Nooyen](https://th.linkedin.com/in/prayong?trk=org-employees)
 
 The internship provided hands-on experience in developing production-level enterprise software, collaborating within a professional development team, and working with CMS-driven applications and modern web technologies.
 
